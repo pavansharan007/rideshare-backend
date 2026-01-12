@@ -1,0 +1,63 @@
+  import mongoose,{Model, Schema} from "mongoose";
+
+  const userSchema = new Schema(
+    {
+      fullname:{
+        type:String
+      },
+      email:{
+        type:String
+      },
+      password:{
+        type:String
+      },
+      idCard:{
+        type:String
+      },
+      phno:{
+        type:String
+      },
+      socketId:{
+        type:String,
+      },
+      hasBike:{
+        type:Boolean,
+        default:false,
+      },
+      lat:{
+        type:Number
+      },
+      long:{
+        type:Number
+      },
+      uniqueId:{
+        type:String
+      },
+      isOnline:{
+        type:Boolean,
+        default:false
+      },
+      bikeName:{
+      type:String
+      },
+      bikeNo:{
+        type:String
+      },
+      bikeImg:{
+        type:String
+      },
+      perHrFee:{
+        type:Number
+      },
+      isBikeOnRide:{
+        type:Boolean,
+        default:false
+      },rideIds:[String],
+      totalEarnings:{
+        type:Number,
+        default:0
+      }
+    }
+  )
+
+  export const User = mongoose.model("User",userSchema)
